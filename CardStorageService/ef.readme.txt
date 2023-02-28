@@ -1,0 +1,13 @@
+﻿План работы:
+1) устанавливаем ms sql
+2) подключаем библиотеку логирования
+3) создаем api empty controller
+4) написать логирование 1:15, nlog.config потом записываем в builder.Host.ConfigureLogging builder.Services.AddHttpLogging
+5) в основной проект устанавливаем - entityFrameworkCore.Design
+6) в data проект:
+       entityFrameworkCore
+       entityFrameworkCore.Proxies
+       entityFrameworkCore.SqlServer
+       entityFrameworkCore.Tools
+
+7) настроили второй проект с БД
