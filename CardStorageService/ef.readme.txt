@@ -11,3 +11,6 @@
        entityFrameworkCore.Tools
 
 7) настроили второй проект с БД
+8) добавили контроллеры Card, Client
+9) создали Utils/PasswordUtils.cs для работы с паролями hash, saly, key
+10) добавили в БД Account, AccountSession для хранения паролей пользователей и их сессий
