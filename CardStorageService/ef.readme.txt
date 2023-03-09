@@ -11,3 +11,11 @@
        entityFrameworkCore.Tools
 
 7) настроили второй проект с БД
+8) добавили контроллеры Card, Client
+9) создали Utils/PasswordUtils.cs для работы с паролями hash, saly, key
+10) добавили в БД Account, AccountSession для хранения паролей пользователей и их сессий
+11) создаем сервис аутентификации, класс sessioninfo
+12) создаем контроллер AuthenticateController
+13) проставляем атрибут authentication методам контроллера
+14) настраиваем аутентификацию в программе и скачиваем доп пакет JWTBearer
+15) добавим методы доступные для любых пользователей AllowAnonymous
