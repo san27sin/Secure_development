@@ -19,3 +19,4 @@
 13) проставляем атрибут authentication методам контроллера
 14) настраиваем аутентификацию в программе и скачиваем доп пакет JWTBearer
 15) добавим методы доступные для любых пользователей AllowAnonymous
+16) добавим в programm app.UseAuthentication(); app.UseAuthorization();  настроим конфигурацию swagger
