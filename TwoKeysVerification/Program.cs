@@ -28,13 +28,34 @@ namespace TwoKeysVerification
                             CertificateConfiguration certificateConfiguration = new CertificateConfiguration
                             {
                                 CertName = "MyCompany CA",
-                                OutFolder = @"C:\Users\san27sin",
+                                OutFolder = @"C:\Users\san27sin\ver_key",
                                 Password = "12345678",
-                                CertDuration = 3
+                                CertDuration = 30
                             };
-
+                            CertificateGenerationProvider certificateGenerationProvider = new CertificateGenerationProvider();
+                            certificateGenerationProvider.GenerateRootCertificate(certificateConfiguration);
+                            Console.WriteLine("Успех!");
                             break;
                         case 2:
+                            int counter = 0;
+                            var certificateExplorerProvider = new CertificateExplorerProvider(true);
+                            certificateExplorerProvider.LoadCertificates();
+                            foreach (var certificate in certificateExplorerProvider.Certificates)
+                            {
+                                Console.WriteLine($"{counter++} >>> {certificate}");
+                            }
+                            Console.Write("Укажите номер корневого сертификата: ");
+
+                            var addCertificateConfiguration = new CertificateConfiguration
+                            {
+                                RootCertificate = certificateExplorerProvider.Certificates[int.Parse(Console.ReadLine())].Certificate,
+                                CertName = "ITDepartment",
+                                OutFolder = @"C:\Users\san27sin\ver_key",
+                                Password = "12345678",
+                            };
+                            CertificateGenerationProvider certificateGenerationProvider2 = new CertificateGenerationProvider();
+                            certificateGenerationProvider2.GenerateCertificate(addCertificateConfiguration);
+                            Console.WriteLine("Успех!");
                             break;
                         default:
                             Console.WriteLine("Некорректный номер подпрограммы. Пожалуйста, повторите ввод.");
