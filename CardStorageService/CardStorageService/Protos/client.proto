@@ -1,0 +1,22 @@
+syntax = "proto3";//указываем какой язык используем
+
+option csharp_namespace = "ClientServiceProtos";//указываем пространство имен для размещения нашего сервера
+
+package ClientServiceProtos;
+
+service ClientService {
+	//методы нашего сервеса
+	rpc Create (CreateClientRequest) returns (CreateClientResponse);//
+}
+
+message CreateClientRequest{
+	string Surname = 1;
+	string FirstName = 2;
+	string Patronymic = 3;
+}
+
+message CreateClientResponse{
+	int32 ClientId = 1;
+	int32 ErrorCode = 2;
+	string ErrorMessage = 3;
+}
